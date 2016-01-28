@@ -18,7 +18,7 @@ public class Producto extends BaseEntity{
     
      private String codigoProducto;
      private String nombre;
-     private BigDecimal precioUnitario;
+     private Float precioUnitario;
 
     public String getCodigoProducto() {
         return codigoProducto;
@@ -28,7 +28,7 @@ public class Producto extends BaseEntity{
         return nombre;
     }
 
-    public BigDecimal getPrecioUnitario() {
+    public Float getPrecioUnitario() {
         return precioUnitario;
     }
 
@@ -40,7 +40,7 @@ public class Producto extends BaseEntity{
         this.nombre = nombre;
     }
 
-    public void setPrecioUnitario(BigDecimal precioUnitario) {
+    public void setPrecioUnitario(Float precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
 
