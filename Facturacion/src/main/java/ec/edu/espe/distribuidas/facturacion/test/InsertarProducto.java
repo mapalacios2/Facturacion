@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.distribuidas.facturacion.test;
 
-import ec.edu.espe.distribuidas.facturacion.modelo.Persona;
+import ec.edu.espe.distribuidas.facturacion.modelo.Producto;
 import ec.edu.espe.distribuidas.facturacion.modelo.persistence.PersistenceManager;
 
 /**
@@ -20,11 +20,11 @@ public class InsertarProducto {
     public static void main(String[] args) {
         // TODO code application logic here
         PersistenceManager pm = new PersistenceManager();
-        Persona p = new Persona();
-        p.setCedula("1805485632");
-        p.setNombre("Giovana Defaz");
+        Producto p = new Producto();
+        p.setCodigoProducto("017");
+        p.setNombre("Kit 4 camaras");
+        p.setPrecioUnitario(188.99f); 
         pm.context().save(p);
-        
     }
     
 }

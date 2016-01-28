@@ -7,24 +7,22 @@ package ec.edu.espe.distribuidas.facturacion.test;
 
 import ec.edu.espe.distribuidas.facturacion.modelo.Persona;
 import ec.edu.espe.distribuidas.facturacion.modelo.persistence.PersistenceManager;
+import java.util.List;
+import org.mongodb.morphia.query.Query;
 
 /**
  *
- * @author Juanjo
+ * @author david
  */
-public class InsertarPersona {
-
-    /**
-     * @param args the command line arguments
-     */
+public class BuscarCedula {
     public static void main(String[] args) {
-        // TODO code application logic here
-        PersistenceManager pm = new PersistenceManager();
-        Persona p = new Persona();
-        p.setCedula("1717965601");
-        p.setNombre("Estefania Balseca");
-        pm.context().save(p);
         
+        String cedula = "1717965691";
+        
+        PersistenceManager p = new PersistenceManager();
+        Query<Persona> query = p.context().createQuery(Persona.class);
+        List<Persona> personas = query.filter("cedula =", cedula).asList();
+        
+        System.out.println("Datos: " + personas);
     }
-    
 }
