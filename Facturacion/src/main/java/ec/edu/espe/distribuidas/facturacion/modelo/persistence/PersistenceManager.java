@@ -33,11 +33,11 @@ public class PersistenceManager {
         }
         mongoClient.setWriteConcern(WriteConcern.SAFE);
         morphia = new Morphia();
-        morphia.mapPackage("ec.edu.espe.distribuidas.mongo.modelo", true);
+        morphia.mapPackage("ec.edu.espe.distribuidas.facturacion.modelo", true);
     }
     
     public PersistenceManager(){
-        mds = morphia.createDatastore(mongoClient, "base1");
+        mds = morphia.createDatastore(mongoClient, "facturacion");
         mds.ensureIndexes();
     }
     
